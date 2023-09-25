@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="internz.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <div class="d-flex flex-row">
+          <img
+            src="data:image/jpeg;base64,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"
+            class="home"
+          />
+          <h1 class="head mt-auto ml-2">My Protfolio</h1>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link active" href="#" 
+            ><div class="fa fa-home fa-lg" style="font-size: 30px;">
+              Home  </div> <span class="sr-only">(current) </span>
+          </a>
+       
+          <a class="nav-link active" href="#sectionintership"><div class="fa fa-search fa-lg" style="font-size: 25px;">
+            My Intro  </div> </a>
+          <a class="nav-link active" href="#sectionCertification"
+            ><div class="fa fa-certificate fa-lg">
+              Certifications  </div></a
+          >
+          <a class="nav-link active" href="#sectionCourse"><div class="fa fa-users fa-lg">
+            Projects  </div> </a>
+          <a class="nav-link active" href="#sectionContact"><div class="fa fa-phone fa-lg">
+            Contact  </div> </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero">
+      <h1>
+        HI! I am<br />S.M.RUKHIYA SAMEENA<br />
+        finding<br />
+        the right place<br />
+        to work <br />effectively<br />
+        and to expand my skillset
+      </h1>
+      <div class="hero-intro">
+        <img class="im"
+          src="sam.jpeg" width="300" height="500" hspace="100" vspace="2"
+        />
+      </div>
+    </div>
+
+    <div id="sectionintership">
+      <div class="c mt-2">
+        <h1 class="inter pl-3" style="color:white" style="font: 900">
+          <!--My Intro-->
+        </h1>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      
+      <br>
+      <br>
+      <br>
+
+      
+      
+<div class="container">
+        <span class="blurry">
+        <Img src="https://www.mumbailive.com/images/news/images_1517489582222_Education.jpg?w=1368"  alt="Snow" style="width:100%;"/></span>
+       
+    
+          <div class="top-left"><h2>↠Education &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</h2>
+            <section id="Education">
+            <table style="width:100%">
+          <td>Anantha Lakshmi Institute Of Technology And Sciences</td>
+          <td>BTech CSE &nbsp; &nbsp; &nbsp;</td>
+          <td>82% &nbsp; &nbsp; &nbsp; &nbsp;</td>
+          <tr>
+            <td>Balayesu &nbsp; Jnr  &nbsp;College  &nbsp; for  &nbsp; girls  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;</td>
+            <td>Intermediate &nbsp;</td>
+            <td>9.46 GPA</td>
+          </tr>
+          <tr>
+            <td>Sree Eswar English Medium High School &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;</td>
+            <td>SSC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+            <td>9.7 GPA</td></p>
+            </tr>
+          </table>
+        </section>
+        </div>
+            
+        <div class="top-left"><h2><p></p><br><br><br>↠Technical Skills</h2><p><li>Python Programming &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li></p>
+          <section id="Technical skills">
+        
+          <p><li>C language &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </li></p>
+      <p><li>Java &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; </li></p>
+      <p><li>My SQL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; </li></p>
+      <p><li>HTML & CSS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</li></p>
+    </section>
+
+    
+    </div>
+    <p> &nbsp;</p>
+    <div class="our">
+      <div class="top-left"><h2><p></p><br><br><br>↠Experiences</h2><p></p>
+        <section id="Experiences">
+          Full Stack Web Development Internship | Nullclass stack overflow-MERN stack
+          <br>
+
+          March 13,2023 - May 5,2023
+          <br>
+        Python Programming Internship | SkillVertex
+        <br>
+April 30,2023 - June 24,2023 
+
+      
+        </section>
+
+  
+  </div>
+      <!--<div class="top-left">
+      Full Stack Web Development Internship | Nullclass stack overflow-MERN stack
+       March 13,2023 - May 5,2023* Krishnagiri, India-->
+
+<!--Python Programming Internship | SkillVertex-->
+<!--April 30,2023 - June 24,2023* Bangalore, Karnataka
+</div>-->
+
+
+    </div>
+  
+    
+
+        <!--css starts-->
+        <style>
+          .blurry{
+            filter: blur(4px);
+          }
+        .container {
+          position: relative;
+          text-align: center;
+          color: rgb(51, 4, 1);
+          font-size: xx-large;
+          font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-style: italic;
+        }
+        .top-left {
+          position: absolute;
+          top: 8px;
+          left: 16px;
+          font-style: italic;
+          font-stretch: expanded;
+          font-size:xx-large;
+          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          filter: blur(px);
+        
+        }
+        </style>
+        <!--css ends-->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="sectionCertification">
+      <div class="c mt-2">
+        <h1 class="inter pl-3" style="color: white" style="font: 900">
+          <!--Certifications-->
+        </h1>
+      </div>
+      <div class="container">
+        
+          <Img src="https://cdn3d.iconscout.com/3d/premium/thumb/graduation-certificate-6920333-5668255.png"  alt="Snow" style="width:60%;"/>
+          <div class="top-left">
+            <ul>
+          <li style="color:rgb(116, 5, 5)">Completed “Diploma Course in Computer Application(DCA)&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;</li><br>
+        <li style="color:rgb(116, 4, 4)">Accenture: Introduction to Artificial Intelligence&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</li><br>
+      <li style="color:rgb(116, 4, 4)">IBM [Developer Skills Network]: Introduction to Cloud Computing&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</li><br>
+    <li style="color:rgb(116, 5, 2)"> Lancaster University, Institute of Coding: Introduction to Virtual, Augmented & Mixed 
+Reality&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</li><br>
+<li style="color:rgb(116, 2, 2)">APSSDC: Python Programming&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</li><br>
+<li style="color:rgb(116, 5, 3)">SAMSUNG: Designing a Sustainable Future&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</li><br>
+<li style="color:rgb(116, 4, 4)">Hacker Rank: Basics of SQL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;</li></ul>
+          </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="sectionCourse">
+      <div class="c mt-2">
+          <h1 class="inter pl-3" style="color:white" style="font:900"><!--Projects--></h1>
+      </div> 
+      <div class="container">
+        <div class="cont">
+        <Img src="https://us.123rf.com/450wm/ahmetemre/ahmetemre1409/ahmetemre140900017/31427463-3d-personnes-mignonnes-rotation-m%C3%A9canisme-d-engrenage-fond-blanc-isol%C3%A9.jpg"  alt="Snow" style="width:50%;"/>
+        <br>
+        Stack overflow clone:
+        <a href="https://rukhiyasameen2.netlify.app/"><u></u> </a><br>
+        
+        
+        Sorting Visualizer:
+        <a href="https://rukhiyasameen2.netlify.app/"><i class="fa fa-eye"></i> </a><br>
+        
+        
+        Restaurant website:
+        <a href="https://rukhiyasameen2.netlify.app/"><u></u> </a></div>
+        
+        <div class="top-left"><p style="color: rgb(1, 49, 9);">
+
+</P>
+</div>
+</div>
+
+<div id="sectionContact">
+        <div class="c mt-2">
+            <h1 class="inter pl-3" style="color:white" style="font:900">
+        </div>
+       <div class="container">
+        <div class="contain">
+       
+         <Img src="https://st.depositphotos.com/1265075/3330/i/450/depositphotos_33303183-stock-photo-web-contact-us-icons-on.jpg"  alt="Snow" style="width:40%;"/></div>
+         <br>
+         
+         <br>
+         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/rukhiyasameen
+         "><div class="fa fa-github fa-lg">
+           </div> </a>
+        
+           <br>
+         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/feed/
+         "><div class="fa fa-linkedin fa-lg">
+           </div> </a>
+        
+           <br>
+         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://mail.google.com/mail/u/0/#inbox
+         "><div class="fa fa-envelope fa-lg">
+           </div> </a>
+
+           
+
+
+
+
+
+
+
+
+
+
+
+         
+         <!--  <div class="top-left">
+            <a href="https://github.com/rukhiyasameen
+             "><p></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://th.bing.com/th?q=GitHub+Logo+for+Resume&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"       /><u>github</u></a>github.com/rukhiyasameen<br>
+                    <br><img src="https://th.bing.com/th?q=Gmail+Logo+Black+and+White+PNG&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"/>rukhiyasameen@gmail.com&nbsp; &nbsp; &nbsp;<img src="https://th.bing.com/th/id/OIP.oQzzdDObTZo_pRt3p-Jr3QHaKG?w=115&h=180&c=7&r=0&o=5&pid=1.7"/>8374258848<br>
+            </div>-->
+
+         </div>
+         
+
+
+            <div class="mission">
+              <a href="#Education">EDUCATION</a>
+                <center> <i class="fa fa-book"></i></center>
+               </section>
+            </div>
+            <div class="vision">
+               <a href="#Technical skills">TECHNICAL SKILLS</a>
+               
+               <center><i class="fa fa-code"></i></center>
+               </section>
+            </div>
+            <div class="passion">
+               <a href="#Experiences">EXPERIENCES</a>
+                <center><i class="fa fa-eye"></i></center>
+               </section>
+            </div>
+          
+      
+         
+          
+      
+      
+    
+    </body>
+</html>
